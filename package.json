@@ -1,0 +1,27 @@
+{
+    "name": "jsbox",
+    "version": "0.0.1",
+    "description": "js在线运行环境",
+    "scripts": {
+        "build": "node ./helper/build.js",
+        "publish": "node ./helper/mod-version.js"
+    },
+    "author": "theajack",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/theajack/ebuild-cli"
+    },
+    "keywords": [
+        "ebuild-cli"
+    ],
+    "license": "MIT",
+    "devDependencies": {
+        "gulp": "^4.0.2"
+    },
+    "dependencies": {},
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    }
+}
