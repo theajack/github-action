@@ -50,11 +50,14 @@ jobs:
         run: npm run build:docs
 
       - name: Pages
-        uses: JamesIves/github-pages-deploy-action@master
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: main
-          FOLDER: docs
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        with:
+          branch: main # The branch the action should deploy to.
+          folder: docs # The folder the action should deploy.
+        # env:
+        #   ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        #   BRANCH: main
+        #   FOLDER: docs
       
       - name: Release
         uses: release-drafter/release-drafter@master
