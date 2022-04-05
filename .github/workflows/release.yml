@@ -1,0 +1,82 @@
+name: Release
+on:
+  push:
+    tags:
+      - v*.*.*
+
+# build npm
+# test
+# publish
+# build docs
+# release
+# github pages
+# purge cdn
+
+
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: build
+
+name: GitHub Actions Build and Deploy Demo
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  Build And Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          registry-url: https://registry.npmjs.org
+
+      - name: Npm Install
+        run: npm install
+
+      - name: version
+        id: version
+        run: |
+          tag=${GITHUB_REF/refs\/tags\//}
+          version=${tag#v}
+          echo "::set-output name=version::${version}"
+
+      - name: Build
+        run: node ./helper/build.js ${{ steps.version.outputs.version }}
+
+      - name: Test
+        run: node ./helper/test/index.js
+
+      - name: Publish
+        run: node ./helper/publish.js
+
+      - name: Build Docs
+        run: npm run build:docs
+
+      # - name: yarn publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
+      #   run: yarn publish --access public
+
+
+      # - uses: release-drafter/release-drafter@master
+      #   with:
+      #     version: ${{ steps.version.outputs.version }}
+      #     publish: true
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # - name: force update major tag
+      #   run: |
+      #     git tag v${{ steps.version.outputs.major }} ${{ steps.version.outputs.tag }} -f
+      #     git push origin refs/tags/v${{ steps.version.outputs.major }} -f

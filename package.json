@@ -1,10 +1,9 @@
 {
-    "name": "jsbox",
+    "name": "tackchen-actions",
     "version": "0.0.1",
     "description": "js在线运行环境",
     "scripts": {
-        "build": "node ./helper/build.js",
-        "publish": "node ./helper/mod-version.js"
+        "build:docs": "node ./helper/build-docs.js"
     },
     "author": "theajack",
     "repository": {
