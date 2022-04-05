@@ -28,13 +28,12 @@ jobs:
           registry-url: https://registry.npmjs.org
 
 
-      - name: Cache node modules
-        uses: actions/cache@v1
+      - uses: actions/cache@v3
         with:
-          path: node_modules
-          key: npm-deps-${{ hashFiles('package-lock.json') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            npm-deps-${{ hashFiles('package-lock.json') }}
+            ${{ runner.os }}-node-
           
       # - name: Cache node modules
       #   uses: actions/cache@v3
