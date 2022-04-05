@@ -28,19 +28,13 @@ jobs:
           registry-url: https://registry.npmjs.org
 
 
-      - name: Determine npm cache directory
-        id: npm-cache
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
-
-      - name: Restore npm cache
-        uses: actions/cache@v3
+      - name: Cache node modules
+        uses: actions/cache@v1
         with:
-          path: ${{ steps.npm-cache.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: node_modules
+          key: npm-deps-${{ hashFiles('package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-
-      - run: npm ci
+            npm-deps-${{ hashFiles('package-lock.json') }}
           
       # - name: Cache node modules
       #   uses: actions/cache@v3
@@ -55,8 +49,8 @@ jobs:
       #       ${{ runner.os }}-build-
       #       ${{ runner.os }}-
 
-      # - name: Npm Install
-      #   run: npm install
+      - name: Npm Install
+        run: npm ci
 
       - name: version
         id: version
