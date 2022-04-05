@@ -12,20 +12,6 @@ on:
 # github pages
 # purge cdn
 
-
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: build
-
-name: GitHub Actions Build and Deploy Demo
-on:
-  push:
-    branches:
-      - master
-
 jobs:
   Build And Deploy:
     runs-on: ubuntu-latest
@@ -80,3 +66,14 @@ jobs:
       #   run: |
       #     git tag v${{ steps.version.outputs.major }} ${{ steps.version.outputs.tag }} -f
       #     git push origin refs/tags/v${{ steps.version.outputs.major }} -f
+
+
+
+
+    # - name: Build and Deploy
+    #   uses: JamesIves/github-pages-deploy-action@master
+    #   env:
+    #     ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+    #     BRANCH: gh-pages
+    #     FOLDER: build
+
