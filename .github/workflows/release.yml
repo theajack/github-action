@@ -13,7 +13,7 @@ on:
 # purge cdn
 
 jobs:
-  Build And Deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
