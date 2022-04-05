@@ -3,7 +3,7 @@ tag-template: 'v$RESOLVED_VERSION'
 template: |
   # What's Changed
 
-  $CHANGES
+  ### [Version Log](https://github.com/theajack/cnchar/blob/master/helper/version.md)
 
   **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
 

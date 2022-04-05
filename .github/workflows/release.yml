@@ -54,10 +54,6 @@ jobs:
         with:
           branch: main # The branch the action should deploy to.
           folder: docs # The folder the action should deploy.
-        # env:
-        #   ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        #   BRANCH: main
-        #   FOLDER: docs
       
       - name: Release
         uses: release-drafter/release-drafter@v5
