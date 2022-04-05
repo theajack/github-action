@@ -49,31 +49,20 @@ jobs:
       - name: Build Docs
         run: npm run build:docs
 
-      # - name: yarn publish
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
-      #   run: yarn publish --access public
-
-
-      # - uses: release-drafter/release-drafter@master
-      #   with:
-      #     version: ${{ steps.version.outputs.version }}
-      #     publish: true
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # - name: force update major tag
-      #   run: |
-      #     git tag v${{ steps.version.outputs.major }} ${{ steps.version.outputs.tag }} -f
-      #     git push origin refs/tags/v${{ steps.version.outputs.major }} -f
-
-
-
-
-    # - name: Build and Deploy
-    #   uses: JamesIves/github-pages-deploy-action@master
-    #   env:
-    #     ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-    #     BRANCH: gh-pages
-    #     FOLDER: build
-
+      - name: Pages
+        uses: JamesIves/github-pages-deploy-action@master
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: main
+          FOLDER: docs
+      
+      - name: Release
+        uses: release-drafter/release-drafter@master
+        with:
+          version: ${{ steps.version.outputs.version }}
+          publish: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      
+      - name: Purge
+        run: node ./helper/purge.js
