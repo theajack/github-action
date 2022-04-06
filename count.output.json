@@ -1,0 +1,174 @@
+{
+    "name": "ROOT",
+    "type": "dir",
+    "fullPath": "",
+    "fileNumber": 12,
+    "lines": 215,
+    "characters": 4861,
+    "childrens": [
+        {
+            "name": ".github",
+            "type": "dir",
+            "fullPath": "/.github",
+            "fileNumber": 2,
+            "lines": 131,
+            "characters": 3056,
+            "childrens": [
+                {
+                    "name": "workflows",
+                    "type": "dir",
+                    "fullPath": "/.github/workflows",
+                    "fileNumber": 1,
+                    "lines": 88,
+                    "characters": 2098,
+                    "childrens": [
+                        {
+                            "name": "release.yml",
+                            "type": "file",
+                            "fullPath": "/.github/workflows/release.yml",
+                            "lines": 88,
+                            "characters": 2098
+                        }
+                    ]
+                },
+                {
+                    "name": "release-drafter.yml",
+                    "type": "file",
+                    "fullPath": "/.github/release-drafter.yml",
+                    "lines": 43,
+                    "characters": 958
+                }
+            ]
+        },
+        {
+            "name": "docs",
+            "type": "dir",
+            "fullPath": "/docs",
+            "fileNumber": 1,
+            "lines": 12,
+            "characters": 277,
+            "childrens": [
+                {
+                    "name": "index.html",
+                    "type": "file",
+                    "fullPath": "/docs/index.html",
+                    "lines": 12,
+                    "characters": 277
+                }
+            ]
+        },
+        {
+            "name": "helper",
+            "type": "dir",
+            "fullPath": "/helper",
+            "fileNumber": 5,
+            "lines": 61,
+            "characters": 1350,
+            "childrens": [
+                {
+                    "name": "test",
+                    "type": "dir",
+                    "fullPath": "/helper/test",
+                    "fileNumber": 1,
+                    "lines": 17,
+                    "characters": 402,
+                    "childrens": [
+                        {
+                            "name": "index.js",
+                            "type": "file",
+                            "fullPath": "/helper/test/index.js",
+                            "lines": 17,
+                            "characters": 402
+                        }
+                    ]
+                },
+                {
+                    "name": "build-docs.js",
+                    "type": "file",
+                    "fullPath": "/helper/build-docs.js",
+                    "lines": 10,
+                    "characters": 233
+                },
+                {
+                    "name": "build.js",
+                    "type": "file",
+                    "fullPath": "/helper/build.js",
+                    "lines": 17,
+                    "characters": 343
+                },
+                {
+                    "name": "publish.js",
+                    "type": "file",
+                    "fullPath": "/helper/publish.js",
+                    "lines": 10,
+                    "characters": 226
+                },
+                {
+                    "name": "purge.js",
+                    "type": "file",
+                    "fullPath": "/helper/purge.js",
+                    "lines": 7,
+                    "characters": 146
+                }
+            ]
+        },
+        {
+            "name": "npm",
+            "type": "dir",
+            "fullPath": "/npm",
+            "fileNumber": 2,
+            "lines": 6,
+            "characters": 108,
+            "childrens": [
+                {
+                    "name": "package",
+                    "type": "dir",
+                    "fullPath": "/npm/package",
+                    "fileNumber": 1,
+                    "lines": 3,
+                    "characters": 54,
+                    "childrens": [
+                        {
+                            "name": "main",
+                            "type": "dir",
+                            "fullPath": "/npm/package/main",
+                            "fileNumber": 1,
+                            "lines": 3,
+                            "characters": 54,
+                            "childrens": [
+                                {
+                                    "name": "index.js",
+                                    "type": "file",
+                                    "fullPath": "/npm/package/main/index.js",
+                                    "lines": 3,
+                                    "characters": 54
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "index.js",
+                    "type": "file",
+                    "fullPath": "/npm/index.js",
+                    "lines": 3,
+                    "characters": 54
+                }
+            ]
+        },
+        {
+            "name": ".gitignore",
+            "type": "file",
+            "fullPath": "/.gitignore",
+            "lines": 2,
+            "characters": 16
+        },
+        {
+            "name": "index.js",
+            "type": "file",
+            "fullPath": "/index.js",
+            "lines": 3,
+            "characters": 54
+        }
+    ]
+}

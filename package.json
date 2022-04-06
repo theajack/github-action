@@ -15,9 +15,9 @@
     ],
     "license": "MIT",
     "devDependencies": {
+        "count-code-line": "^0.0.4",
         "gulp": "^4.0.2"
     },
-    "dependencies": {},
     "husky": {
         "hooks": {
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
